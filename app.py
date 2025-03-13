@@ -104,5 +104,11 @@ def send_to_syslog(msg):
 # EXECUÇÃO
 events = get_events()
 
-for event in events:
-    send_to_syslog(event)
+
+if events != []:
+    print("Iniciando envio ao syslog")
+    for event in events:
+        send_to_syslog(event)
+    print("Finalizado envio ao syslog")
+else:
+    print("Não foi possível encontrar logs")
