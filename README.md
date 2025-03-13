@@ -33,31 +33,31 @@ pip install requests python-dotenv
 
 ## Uso
 
-### Coletar dispositivos do EPO
-
-No código, a função `get_devices()` busca todos os dispositivos cadastrados no EPO e os exibe no console.
+Para executar o codigo e enviar para o syslog.
 
 ```python
-get_devices()
+python app.py
 ```
 
-### Coletar logs do EPO
+## Testando o recebimento com Netcat (simulando um syslog)
 
-A função `get_events()` coleta os logs do EPO e retorna os dados coletados.
+Instale o Netcat.
 
 ```python
-events = get_events()
-print(events)
+sudo apt update
+sudo apt install netcat
 ```
 
-### Enviar logs para o Syslog
-
-A função `send_to_syslog()` envia os logs coletados para um servidor Syslog via socket UDP.
+Coloque em modo de escuta para ver os logs.
 
 ```python
-events = get_events()
-for event in events:
-    send_to_syslog(event)
+sudo nc -vklu 514
+```
+
+Para executar o script e enviar para o syslog.
+
+```python
+python app.py
 ```
 
 ## Estrutura do Código
