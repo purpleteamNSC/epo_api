@@ -58,7 +58,7 @@ sudo apt install netcat
 Coloque em modo de escuta para ver os logs.
 
 ```python
-sudo nc -vklu 514
+sudo nc -vklup 514
 ```
 
 Para executar o script e enviar para o syslog.
