@@ -25,7 +25,14 @@ SECRET=seu_segredo
 TRELLIX_API=sua_chave_de_api
 ```
 
-2. Instale as bibliotecas necessárias:
+2. Passos para criar as credenciais:
+- Acesse: https://auth.ui.trellix.com/dashboard.html
+- Clique no avatar no canto superior direto
+- Clique em Clientcredentials
+- Clique no botao ADD 
+- Escolha todos os scopes com epo.
+
+3. Instale as bibliotecas necessárias:
 
 ```bash
 pip install requests python-dotenv
